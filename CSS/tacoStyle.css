@@ -1,4 +1,4 @@
- :root {
+    :root {
       --raisin-black: #241c25;
       --indian-red: #d75b67;
       --carolina-blue: #87afd4;
@@ -24,8 +24,8 @@
     .container {
       background: white;
       border-radius: 15px;
-      box-shadow: var(--antiflash-white);
-      max-width: 800px;
+      box-shadow: var(--raisin-black);
+      max-width: 900px;
       width: 100%;
       margin: 30px auto;
       overflow: hidden;
@@ -37,7 +37,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      text-align: center;
     }
 
     .home-link {
@@ -55,16 +54,18 @@
       background: var(--antiflash-white);
       color: var(--raisin-black);
       transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--raisin-black);
     }
 
     h1 {
       font-weight: 900;
       font-size: 2.2rem;
       color: white;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: var(--raisin-black);
       letter-spacing: 0.5px;
       padding: 0 15px;
+      text-align: center;
+      flex-grow: 1;
     }
 
     .recipe-content {
@@ -80,6 +81,7 @@
       padding: 12px;
       border-radius: 50px;
       outline: solid 4px var(--raisin-black);
+      box-shadow: var(--raisin-black);
     }
 
     h2, h3, h4 {
@@ -99,7 +101,7 @@
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 25px;
-      
+      box-shadow: var(--raisin-black);
     }
 
     ul, ol {
@@ -108,9 +110,20 @@
     }
 
     li {
-      list-style: none;
       margin-bottom: 12px;
       font-size: 1.05rem;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--indian-red);
+      font-weight: bold;
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -5px;
     }
 
     .ingredients-grid {
@@ -126,6 +139,7 @@
       border-radius: 8px;
       display: flex;
       align-items: center;
+      box-shadow: var(--raisin-black);
     }
 
     .ingredient-item::before {
@@ -138,9 +152,12 @@
 
     .steps-list li {
       counter-increment: step-counter;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       position: relative;
       padding-left: 35px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
     }
 
     .steps-list li::before {
@@ -159,10 +176,77 @@
       top: 0;
     }
 
+    .step-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid var(--raisin-black);
+      box-shadow: var(--raisin-black);
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .cooking-time {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+      background: var(--antiflash-white);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: var(--raisin-black);
+    }
+
+    .time-card {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .time-card h4 {
+      color: var(--raisin-black);
+      border-bottom: none;
+      margin-bottom: 5px;
+    }
+
+    .time-card p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--indian-red);
+      margin: 0;
+    }
+
     footer {
+      text-align: center;
       padding: 20px;
       background: var(--raisin-black);
-      margin-top: 20px;
       color: var(--antiflash-white);
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    .topping-suggestions {
+      background: var(--antiflash-white);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+      box-shadow: var(--raisin-black);
+    }
+
+    .topping-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .topping-item {
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
       text-align: center;
+      box-shadow: var(--raisin-black);
+      border-left: 3px solid var(--indian-red);
     }
